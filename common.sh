@@ -61,7 +61,7 @@ LIBS_PKGS[openssl]=openssl
 # xrz:todo 源码已经放入脚本中，默认不需要额外下载 2020-08-11
 pull_from_remote=FALSE
 # ffmpeg
-All_Resources[ffmpeg]=https://codeload.github.com/FFmpeg/FFmpeg/tar.gz/n4.2
+All_Resources[ffmpeg]=https://codeload.github.com/FFmpeg/FFmpeg/tar.gz/n5.1.2
 # x264
 All_Resources[x264]=https://code.videolan.org/videolan/x264/-/archive/stable/x264-stable.tar.gz
 # fdkaac
