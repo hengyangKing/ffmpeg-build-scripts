@@ -48,7 +48,7 @@ export WIN_PYTHON_PATH=C:/Users/Administrator/AppData/Local/Programs/Python/Pyth
 # 分析原因：此问题为偶然发现，以静态库方式导入可执行程序时(如果引用的库中又引用了其它库或者各个模块之间有相互引用时)那么就一定要注意连接顺序的问题，所以最后一定要按照如下顺序导入到android中(其中ffmpeg库的顺序也要固定)
 # libavformat.a libavcodec.a libavfilter.a  libavutil.a libswresample.a libswscale.a libass.a libfontconfig.a libexpat.a libfreetype.a libfribidi.a libmp3lame.a libx264.a
 export LIBFLAGS=(
-[ffmpeg]=TRUE [x264]=TRUE [fdkaac]=FALSE [mp3lame]=FALSE [fribidi]=FALSE [freetype]=FALSE [expat]=FALSE [fontconfig]=FALSE [ass]=FALSE [openssl]=FALSE
+[ffmpeg]=TRUE [x264]=TRUE [fdkaac]=TRUE [mp3lame]=TRUE [fribidi]=FALSE [freetype]=FALSE [expat]=FALSE [fontconfig]=FALSE [ass]=FALSE [openssl]=FALSE
 )
 
 # 内部调试用
@@ -627,7 +627,7 @@ do_compile_ffmpeg()
         
     #硬编解码，不同平台配置参数不一样
     if [ $ENABLE_GPU = "TRUE" ];then
-        # 开启Android的MediaCodec GPU解码;ffmpeg只支持GPU解码
+        # 开启Android的MediaCodec GPU解码; ffmpeg只支持GPU解码
         export COMMON_FF_CFG_FLAGS="$COMMON_FF_CFG_FLAGS --enable-mediacodec --enable-decoder=h264_mediacodec"
     fi
     
