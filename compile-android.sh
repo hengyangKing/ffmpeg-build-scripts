@@ -22,7 +22,7 @@ set -e
 . ./common.sh
 
 #export FF_ALL_ARCHS_ANDROID="armv7a arm64 x86_64"
-export FF_ALL_ARCHS_ANDROID="arm64"
+export FF_ALL_ARCHS_ANDROID="arm64 armv7a"
 
 # 编译的API级别 (最小5.0以上系统)
 export FF_ANDROID_API=21
